@@ -2,35 +2,35 @@ import './App.css';
 
 function App() {
 
-  const clase = {
-    numero: '5',
-    tema: 'Angular'
+  const estilos = {
+    div1: { backgroundColor: 'red', width: 650, height: 400, margin: '0 auto' },
+    div2: { backgroundColor: 'yellow', width: 450, height: 300, margin: '0 auto' },
+    div3: { backgroundColor: 'green', width: 300, height: 200, margin: '0 auto', 
+      display: 'flex', justifyContent: 'center', alignItems: 'center' },
+    btn: { height: 50 },
   }
 
-  const autos = [
-    { id: 1, nombre: 'Corsa', marca: 'Chevrolet' },
-    { id: 2, nombre: 'Siena', marca: 'Fiat' },
-    { id: 3, nombre: 'Ka', marca: 'Ford' },
-    { id: 4, nombre: 'Gol', marca: 'Volkswagen' },
-    { id: 5, nombre: 'A7', marca: 'Audi' },
-  ]
+  function eventHandler(e) {
+    e.target.style.backgroundColor = 'blue';
+  }
 
-  const estilos = {
-    color: 'blue',
-    fontSize: 30,
+  function detenerPropagacion(e) {
+    e.stopPropagation();
   }
 
   return (
-    <div className="App">
-      <h2 style={estilos}>Bienvenidos a las clase {clase.numero} de {clase.tema} </h2>
-      <ul>
-        {autos.map(auto => (
-          <li key={auto.id}>
-            <strong>{auto.marca}</strong>
-            <span>{auto.nombre}</span>
-          </li>
-        ))}
-      </ul>
+    <div style={estilos.div1} onClick={eventHandler}>
+
+      <div style={estilos.div2} onClick={detenerPropagacion}> 
+
+        <div style={estilos.div3}>
+          
+          <button style={estilos.btn}>Presioname</button>
+        
+        </div>
+      
+      </div>
+
     </div>
   );
 }
