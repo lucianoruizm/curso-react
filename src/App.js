@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Lista from './components/Lista';
+import Contador from './components/Contador';
 
 const autosData = [
   { id: 1, strong: 'Corsa', span: 'Chevrolet' },
@@ -38,6 +39,8 @@ function App() {
   
   return (
     <div>
+      <Contador/>
+
       <button onClick={actualizarEstado}>Actualizar Estado</button>
       <h1>{ estado }</h1>
 
