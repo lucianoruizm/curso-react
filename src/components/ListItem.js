@@ -1,9 +1,10 @@
-const ListItem = (props) => {
+const ListItem = ({ contenido, eliminar }) => {
 
     return (
-        <li style={{ listStyle: 'none' }}>
-            <span>{props.contenido.span}</span>
-            <strong style={{ paddingLeft: 5 }}>{props.contenido.strong}</strong>
+        <li style={{ listStyle: 'none' }} 
+            onClick={() => eliminar(contenido.id)}>
+            <span>{contenido.span}</span>
+            <strong style={{ paddingLeft: 5 }}>{contenido.strong}</strong>
         </li>
     )
 }
