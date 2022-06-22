@@ -1,17 +1,17 @@
-// import ListItem from "./ListItem";
+import ListItem from "./ListItem";
 
-// function Lista({ titulo, lista, children }) {
+function Lista({ titulo, lista, children }) {
 
-//     return (
-//         <ul>
-//             <li><h3>{titulo}</h3></li>
-//             {lista.map(item => (
-//                 <ListItem key={item.id} contenido={item}/>
-//             ))}
+    return (
+        <ul>
+            <li><h3>{titulo}</h3></li>
+            {lista.map(item => (
+                <ListItem key={item.id} contenido={item}/>
+            ))}
 
-//             { children }
-//         </ul>
-//     )
-// }
+            { children }
+        </ul>
+    )
+}
 
-// export default Lista;
+export default Lista;
