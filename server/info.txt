@@ -1,0 +1,5 @@
+Como falso backend, se puede utilizar json-server, en consola ejecutar lo siguiente:
+Si aun no esta instalado: 1. npm i json-server
+Dentro de la carpeta server: 2. json-server --watch db.json --port 8000 u otro pero que no sea 3000 porque esta ocupado por React,
+db.json es el nombre del archivo a usar como ejemplo.
+Otra opción: 2. npx json-server --watch db.json --port 8000
