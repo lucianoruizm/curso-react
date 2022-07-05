@@ -1,53 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAxios } from "../hooks/useAxios";
 
 const Lista = () => {
+    const [botonActualizador, setBotonActualizador] = useState(false);
+
+    const { data, error, isLoading} = 
+        useAxios([botonActualizador], 'https://jsonplaceholder.typicode.com/users');
+    const { data: worldCupData, error: worldCupError, isLoading: isWorldCupLoading} = 
+        useAxios([botonActualizador], 'http://localhost:8000/team');
+
     
-    const [data, setData] = useState([]);
-    const [error, setError] = useState({
-        isError: false,
-        message: '',
-    });
-    const [isLoading, setIsLoading] = useState(false);
-
-    const [worldCupData, setWorldCupData] = useState([]);
-    const [worldCupError, setWorldCupError] = useState({
-        isError: false,
-        message: '',
-    });
-    const [isWorldCupLoading, setIsWorldCupLoading] = useState(false);
-    
-    const [botonActualizador, setBotonActualizador] = useState('');
-
-    useEffect(() => {
-        setIsLoading(true);
-        axios('https://jsonplaceholder.typicode.com/users')
-            .then(res => setData(res.data))
-            .catch(err => setError({
-                isError: true,
-                message: err.message,
-            }))
-            .finally(() => {
-                setTimeout(() => {
-                    setIsLoading(false)
-                }, 1000)
-            })
-    }, [botonActualizador])
-
-    useEffect(() => {
-        setIsWorldCupLoading(true);
-        axios('http://localhost:8000/team')
-            .then(res => setWorldCupData(res.data))
-            .catch(err => setWorldCupError({
-                isError: true,
-                message: err.message,
-            }))
-            .finally(() => {
-                setTimeout(() => {
-                    setIsWorldCupLoading(false)
-                }, 1000)
-            })
-    }, [botonActualizador])
 
     return (
         <>
