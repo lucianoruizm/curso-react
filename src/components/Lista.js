@@ -67,7 +67,12 @@ const Lista = () => {
                 }
             </ul>
 
-            <ul>
+            <ul style={{
+                display: 'flex',
+                // flexDirection: 'column',
+                gap: '1rem',
+                listStyle: 'none',
+            }}>
                 { 
                     worldCupError.isWorldCupError ? <h4 style={{color: 'red'}}>Error: {worldCupError.message}</h4> :
                 
@@ -75,8 +80,28 @@ const Lista = () => {
 
                           worldCupData.length !== 0 &&
             
-                            worldCupData.map(item => (
-                                 <li>{item.name} --- {item.email}</li>
+                            worldCupData.matches.map(({match, date, day, time, rival, stadium, img}) => (
+                                 <li>
+                                    <div style={{
+                                        maxWidth: '200px',
+                                        background: 'skyblue',
+                                        padding: 10,
+                                    }}>
+                                        <h2>{rival}</h2>
+                                        <img src={img} alt={rival} style={{maxWidth: '100%'}}/>
+                                        <div style={{
+                                            display: 'flex',
+                                            gap: '1rem',
+                                            fontSize: 13,
+                                        }}>
+                                            <p>{date}</p>
+                                            <p>{day}</p>
+                                            <p>{time}</p>
+                                        </div>
+                                        <h3>{stadium}</h3>
+                                    </div>
+                                    
+                                 </li>
                             ))
                 }
             </ul>
