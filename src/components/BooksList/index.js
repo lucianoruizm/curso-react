@@ -1,13 +1,14 @@
 import { useContext } from "react";
-import { BooksContext } from "../../App";
+import { BooksContext, ThemeContext } from "../../App";
 import { BookItem, BooksContainer, BookUnorderedList} from "./book-list.styled";
 
 
 const BooksList = () => {
     const books = useContext(BooksContext)
+    const themeStyles = useContext(ThemeContext)
 
     return (
-        <BooksContainer>
+        <BooksContainer themeStyles={themeStyles}>
             <h2>Lista de Libros</h2>
             <BookUnorderedList>
                 { books.map(book => (

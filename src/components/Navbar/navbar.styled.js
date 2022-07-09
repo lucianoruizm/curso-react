@@ -1,8 +1,7 @@
 import styled from "@emotion/styled"
 
 export const NavbarContainer = styled.nav`
-    background: #eee;
-    color: #555;
+    ${({ themeStyles }) => themeStyles};
     padding: 5px;
     ul {
         padding: 0;

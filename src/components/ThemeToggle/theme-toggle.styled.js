@@ -1,12 +1,15 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const ToggleButton = styled.button`
-    background: #eee;
+    background: skyblue;
     color: #555;
+    border: none;
+    border-radius: 5px;
+    padding: .3rem .5rem;
 `;
 
-export const toggleContainerStyles = css`
-    background: #eee;
-    color: #555;
-`
+export const ToggleContainer = styled.div`
+    ${({ themeStyles }) => themeStyles};
+    padding: 1rem;
+    padding-top: 0;
+`;

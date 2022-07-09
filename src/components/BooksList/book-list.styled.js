@@ -1,10 +1,8 @@
 import styled from "@emotion/styled/macro";
 
 export const BooksContainer = styled.div`
+    ${({ themeStyles }) => themeStyles};
     padding: 20px;
-    margin-bottom: 20px;
-    background: #eee;
-    color: #555;
 `;
 
 export const BookUnorderedList = styled.ul`
@@ -14,6 +12,5 @@ export const BookUnorderedList = styled.ul`
 
 export const BookItem = styled.li`
     padding: 10px;
-    margin: 10px auto;
     border-radius: 10px;
 `;
