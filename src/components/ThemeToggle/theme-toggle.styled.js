@@ -6,6 +6,7 @@ export const ToggleButton = styled.button`
     border: none;
     border-radius: 5px;
     padding: .3rem .5rem;
+    cursor: pointer;
 `;
 
 export const ToggleContainer = styled.div`

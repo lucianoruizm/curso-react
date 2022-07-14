@@ -1,14 +1,14 @@
 import { ToggleButton, ToggleContainer } from "./theme-toggle.styled";
 import React, { useContext } from 'react';
-import { ThemeContext } from "../../App";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 export default function ThemeToggle() {
-    const themeStyles = useContext(ThemeContext)
+    const { themeStyles, updateThemeStyles } = useContext(ThemeContext)
 
 
     return (
     <ToggleContainer themeStyles={themeStyles}>
-        <ToggleButton>
+        <ToggleButton onClick={updateThemeStyles}>
             Cambiar Tema
         </ToggleButton>
     </ToggleContainer>
