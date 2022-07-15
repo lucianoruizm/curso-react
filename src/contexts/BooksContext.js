@@ -4,10 +4,10 @@ export const BooksContext = createContext();
 
 const BooksContextProvider = (props) => {
     const [books, setBooks] = useState([
-        {title: '100 Años de Soledad', id: 1 },
-        {title: 'Las Venas Abiertas de America Latina', id: 2 },
-        {title: 'El Viejo y el Mar', id: 3 },
-        {title: 'Sandokan', id: 4 },
+        { author: 'García Marquez', title: '100 Años de Soledad', id: 1 },
+        { author: 'Eduardo Galeano', title: 'Las Venas Abiertas de America Latina', id: 2 },
+        { author: 'Ernest Hemignway', title: 'El Viejo y el Mar', id: 3 },
+        { author: 'Emilio Salgari', title: 'Sandokan', id: 4 },
       ]);
     
     return (

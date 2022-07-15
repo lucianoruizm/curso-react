@@ -1,8 +1,9 @@
+import React from 'react';
 import { useContext } from "react";
 import { BooksContext } from "../../contexts/BooksContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { BookItem, BooksContainer, BookUnorderedList} from "./book-list.styled";
-
+import { BooksContainer, BookUnorderedList} from "./book-list.styled";
+import BookItem from '../BookItem';
 
 const BooksList = () => {
     const books = useContext(BooksContext)
@@ -10,12 +11,9 @@ const BooksList = () => {
 
     return (
         <BooksContainer themeStyles={themeStyles}>
-            <h2>Lista de Libros</h2>
             <BookUnorderedList>
                 { books.map(book => (
-                    <BookItem key={ book.id }>
-                        { book.title }
-                    </BookItem>
+                    <BookItem key={ book.id } book={book} />
                 ))}
             </BookUnorderedList>
         </BooksContainer>

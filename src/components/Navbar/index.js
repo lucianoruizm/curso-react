@@ -9,12 +9,13 @@ export default function Navbar () {
     
     return (
            <NavbarContainer themeStyles={themeStyles}>
-              <h1>Libros Disponibles: {books.length}</h1>
+              <h1>Reading List</h1>
               <ul>
                 <li>Home</li>
                 <li>About</li>
                 <li>Contact</li>
               </ul>
+              <span>Hoy, tu tienes: {books.length} libros por leer</span>
            </NavbarContainer>
     )
 }
