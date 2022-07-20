@@ -4,7 +4,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { NavbarContainer } from "./navbar.styled";
 
 export default function Navbar () {
-    const books = useContext(BooksContext)
+    const {books} = useContext(BooksContext)
     const { themeStyles } = useContext(ThemeContext)
     
     return (

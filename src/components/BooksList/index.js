@@ -6,7 +6,7 @@ import { BooksContainer, BookUnorderedList} from "./book-list.styled";
 import BookItem from '../BookItem';
 
 const BooksList = () => {
-    const books = useContext(BooksContext)
+    const { books } = useContext(BooksContext)
     const { themeStyles } = useContext(ThemeContext)
 
     return (

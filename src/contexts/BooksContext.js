@@ -1,17 +1,22 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
+import bookReducer from '../reducers/bookReducer';
 
 export const BooksContext = createContext();
 
+const initialState = [
+    { author: 'García Marquez', title: '100 Años de Soledad', id: 1 },
+    { author: 'Eduardo Galeano', title: 'Las Venas Abiertas de America Latina', id: 2 },
+    { author: 'Ernest Hemignway', title: 'El Viejo y el Mar', id: 3 },
+    { author: 'Emilio Salgari', title: 'Sandokan', id: 4 },
+];
+
 const BooksContextProvider = (props) => {
-    const [books, setBooks] = useState([
-        { author: 'García Marquez', title: '100 Años de Soledad', id: 1 },
-        { author: 'Eduardo Galeano', title: 'Las Venas Abiertas de America Latina', id: 2 },
-        { author: 'Ernest Hemignway', title: 'El Viejo y el Mar', id: 3 },
-        { author: 'Emilio Salgari', title: 'Sandokan', id: 4 },
-      ]);
+    const [books, dispatch] = useLocalStorage('books', bookReducer, initialState);
     
+
     return (
-        <BooksContext.Provider value={books}>
+        <BooksContext.Provider value={{ books, dispatch }}>
             { props.children }
         </BooksContext.Provider>
     )

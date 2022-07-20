@@ -1,4 +1,3 @@
-import './App.css';
 import { AppContainer } from './App.styled';
 import Navbar from './components/Navbar';
 import BooksList from './components/BooksList';
