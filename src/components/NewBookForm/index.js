@@ -5,16 +5,24 @@ import { ACTIONS } from '../../reducers/bookReducer';
 import { FormContainer, InputField } from './new-book-form.styled';
 
 const NewBookForm = () => {
-    const { dispatch } = useContext(BooksContext)
+    const { books, dispatch } = useContext(BooksContext)
     const { themeStyles } = useContext(ThemeContext)
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
-
+    function generateId(books) {
+        const id = Math.max(0, ...books.map(book => book.id)) + 1;
+        return id;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newBook = { author: author, title: title, id: new Date };
+        const newBook = { 
+            author: author, 
+            title: title, 
+            id: generateId(books),
+            isRead: false,
+        };
         dispatch({ type: ACTIONS.ADD_BOOK, payload: newBook});
         setTitle('');
         setAuthor('');

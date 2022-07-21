@@ -2,7 +2,7 @@ import styled from "@emotion/styled/macro";
 
 export const BooksContainer = styled.div`
     ${({ themeStyles }) => themeStyles};
-    padding: 0 20px;
+    padding: 0;
     border-top: solid 1px #fff;
     border-bottom: solid 1px #fff;
 `;
